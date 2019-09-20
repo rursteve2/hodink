@@ -10,7 +10,8 @@ class App extends Component {
     }
   }
 
-  submitForm = () => {
+  submitForm = (e) => {
+    e.preventDefault()
     this.setState({
       notifySubmitted: true
     })
@@ -34,7 +35,7 @@ class App extends Component {
             <img src={logo} alt="" className="hodinkee"/>
             <p className="date">Coming 06.26.19</p>
           </div>
-          <form onSubmit={this.submitForm}>
+          <form onSubmit={(e) => this.submitForm(e)}>
             <input type="email" placeholder="Your email address"/>
             <button type="submit">NOTIFY ME</button>
           </form>
