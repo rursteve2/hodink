@@ -1,22 +1,218 @@
+@font-face {
+  font-family: "BrownStd";
+  src: url("./exercise/fonts/BrownStd-Regular.woff") format('woff');
+}
+@font-face {
+  font-family: "Portrait";
+  src: url("./exercise/fonts/Portrait-MediumItalic.woff") format('woff');
+}
+
 .App {
   text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-}
-
-.App-header {
-  background-color: #282c34;
   min-height: 100vh;
+  position: relative;
+}
+
+html {
+  background-image: url("./exercise/bg-2440.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  min-height: 100vh;
+}
+
+form {
+  margin-top: 48px;
+  background: #FFFFFF;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
+  height: 66px;
+  max-width: 408px;
   display: flex;
-  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  align-content: center;
+  margin-left: auto;
+  margin-right: auto;
+  transition: all .5s ease-in-out;
+}
+
+input[type="email"] {
+  border: none;
+  height: 22px;
+  margin-left: 13px;
+  font-family: "Portrait";
+  font-size: 18px;
+  line-height: 22px;
+}
+
+button[type="submit"] {
+  margin-right: 11px;
+  height: 42px;
+  width: 125px;
+  font-family: "BrownStd";
+  font-size: 18px;
+  line-height: 21px;
+  font-weight: lighter;
+  background-color: #2E707C;
+  border: none;
+  border-radius: 2px;
+  color: #FFFFFF;
+}
+
+button[type="submit"]:hover {
+  animation: pulsate-fwd 0.5s ease-in-out infinite both;
+}
+
+input:focus {
+  outline: none;
+}
+
+.logo {
+  position: relative;
+ 
+}
+
+.hodinkee {
+  margin-bottom: 23px;
+  transition: all 1.5s ease-in-out;
+}
+
+.hodinkee:hover {
+  transform: scale(1.1);
+  transition: all 1.5s ease-in-out;
+
+}
+.date {
+  font-family: "BrownStd";
+  font-size: 18px;
+  line-height: 22px;
+  letter-spacing: .03em;
+  color: #4E99AA;
+  transition: all 1.5s ease-in-out;
+}
+
+.date:hover {
+  transform: scale(1.1);
+  transition: all 1.5s ease-in-out;
+}
+
+.info {
+  margin: auto;
+  top: 15%;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  position: absolute;
+  overflow: hidden;
+  height: 50%;
+}
+
+nav a {
+  position: relative;
+  width: 94px;
+  height: 42px;
+  top: 60px;
+  background: rgba(222, 222, 222, 0.4);
+  border-radius: 24px;
+  border: none;
+  color: #FFFFFF;
+  font-family: "BrownStd";
+  font-size: 14px;
+  line-height: 17px;
+  display: flex;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  text-decoration: none;
+  transition: all .5s ease-in-out;
 }
 
-.App-link {
-  color: #09d3ac;
+nav a:hover {
+  background: rgba(221, 221, 221, 0.671);
+  transition: all .5s ease-in-out;
+  color: rgb(58, 58, 58);
+  transform: scale(1.1);
+}
+
+a p {
+  margin-top: 17px;
+}
+
+
+
+nav {
+  display: flex;
+  justify-content: space-between;
+}
+
+.hshop {
+  left: 7.5%;
+}
+
+.share {
+  right: 7.5%;
+}
+
+.interest {
+  animation: text-focus-in 1s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
+  font-family: "Portrait";
+}
+
+@keyframes text-focus-in {
+  0% {
+    -webkit-filter: blur(12px);
+            filter: blur(12px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-filter: blur(0px);
+            filter: blur(0px);
+    opacity: 1;
+  }
+}
+
+@keyframes pulsate-fwd {
+  0% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  50% {
+    -webkit-transform: scale(1.1);
+            transform: scale(1.1);
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+
+
+@media only screen and (max-width: 1440px) {
+  html {
+    background-image: url("./exercise/bg-1440.jpg");
+  }
+}
+
+@media only screen and (max-width: 720px) {
+  html {
+    background-image: url("./exercise/bg-720.jpg");
+  }
+}
+
+@media only screen and (max-width: 414px) {
+  html {
+    background-image: url("./exercise/bg-mobile.jpg");
+  }
+
+  form {
+    max-width: 87%;
+    margin-top: 34px;
+  }
+
+  nav a {
+    width: 93px;
+    height: 33px;
+    top: 36px;
+    border-radius: 24px;
+  }
 }
